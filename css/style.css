@@ -6,12 +6,15 @@
   --color-white: hsl(0, 0%, 98%);
 
   --fs-xl: 4.5rem;
-  --fs-500: 3.2rem;
+  --fs-500: 3.5rem;
   --fs-400: 1.8rem;
-  --fs-300: 1.4rem;
+  --fs-300: 1.6rem;
+  --fs-200: 1.4rem;
 
   --fw-bold: 700;
   --fw-normal: 500;
+
+  --br-400: 12px;
 }
 
 html {
@@ -23,9 +26,12 @@ html {
 *::before,
 *::after {
   box-sizing: inherit;
+  margin: 0;
 }
 
 body {
+  /* padding-top: 5rem; to be removed*/
+  /* padding-left: 5rem; to be removed */
   font-family: "Epilogue", Arial, Helvetica, sans-serif;
   color: var(--color-grey);
 }
@@ -37,7 +43,84 @@ h1 {
 }
 
 p {
-  font-size: var(--fs-400);
+  font-size: var(--fs-300);
+}
+
+.modified-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.modified-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.btn {
+  padding: 1.2rem 1.8rem;
+  border-radius: var(--br-400);
+  border: 1.5px solid;
+  transition: all 0.2s ease-out;
+}
+
+.btn--dark {
+  --color-main: var(--color-black);
+  --color-secondary: var(--color-white);
+
+  border-color: var(--color-black);
+  color: var(--color-secondary);
+  background-color: var(--color-main);
+}
+
+.btn--dark:hover {
+  --color-main: var(--color-white);
+  --color-secondary: var(--color-black);
+}
+
+.btn--light {
+  --color-main: var(--color-grey);
+
+  border-color: var(--color-main);
+  color: var(--color-main);
+}
+
+.btn--light:hover {
+  --color-main: var(--color-black);
+}
+
+/* Hero Section */
+.hero__img {
+  width: 100%;
+}
+
+.hero-content {
+  text-align: center;
+}
+
+.hero__text {
+  line-height: 1.5;
+}
+
+.hero-section .btn {
+  display: inline-block;
+  font-size: var(--fs-300);
+  margin-block: 2rem 3.5rem;
+}
+
+.client-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.client-group > * {
+  max-width: 20%;
+}
+
+@media screen and (max-width: 600px) {
+  .hero-content {
+    width: 90%;
+    margin-inline: auto;
+  }
 }
 
 /* Attribution */
