@@ -5,7 +5,7 @@
   --color-grey: hsl(0, 0%, 41%);
   --color-white: hsl(0, 0%, 98%);
 
-  --fs-xl: 4.5rem;
+  --fs-xl: 7.4rem;
   --fs-500: 3.5rem;
   --fs-400: 1.8rem;
   --fs-300: 1.6rem;
@@ -88,13 +88,18 @@ p {
   --color-main: var(--color-black);
 }
 
-/* Hero Section */
-.hero__img {
-  width: 100%;
+.container {
+  width: 90%;
+  margin-inline: auto;
 }
 
-.hero-content {
-  text-align: center;
+/* Hero Section */
+.hero-section.container {
+  max-width: 1140px;
+}
+
+.hero__img {
+  width: 100%;
 }
 
 .hero__text {
@@ -109,6 +114,7 @@ p {
 
 .client-group {
   width: 100%;
+  max-width: 470px;
   display: flex;
   gap: 2rem;
   justify-content: space-between;
@@ -119,13 +125,6 @@ p {
   min-width: 0;
 }
 
-@media screen and (max-width: 600px) {
-  .hero-content {
-    width: 90%;
-    margin-inline: auto;
-  }
-}
-
 /* Attribution */
 .attribution {
   font-size: 11px;
@@ -133,4 +132,39 @@ p {
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+@media screen and (max-width: 600px) {
+  .hero-content {
+    width: 90%;
+    margin-inline: auto;
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .hero-section {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(100px, 1fr));
+    grid-auto-flow: dense;
+    grid-column-gap: 4rem;
+  }
+
+  .hero__img {
+    max-width: 480px;
+    grid-column-start: 2;
+    justify-self: end;
+  }
+
+  .hero-content {
+    max-width: 500px;
+    grid-column-start: 1;
+    align-self: center;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  h1 {
+    font-size: min(var(--fs-500) + 2.7vw, var(--fs-xl));
+  }
 }
