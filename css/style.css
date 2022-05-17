@@ -15,6 +15,7 @@
   --fw-normal: 500;
 
   --br-400: 12px;
+  --br-300: 8px;
 }
 
 html {
@@ -46,14 +47,23 @@ p {
   font-size: var(--fs-300);
 }
 
-.modified-list {
+.list--modified {
   list-style: none;
   padding-left: 0;
 }
 
-.modified-link {
+.link--modified,
+.nav-bar a {
   text-decoration: none;
   color: inherit;
+}
+
+.button--modified {
+  background: transparent;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  padding: 0;
 }
 
 .btn {
@@ -90,7 +100,164 @@ p {
 
 .container {
   width: 90%;
+  max-width: 1360px;
   margin-inline: auto;
+}
+
+.background-panel {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: var(--color-black);
+  opacity: 0.7;
+}
+
+/* Nav Bar*/
+.nav-bar {
+  font-size: var(--fs-200);
+  padding-block: 3rem;
+}
+
+.nav-bar a:hover,
+.nav-expandable__header:hover {
+  color: var(--color-black);
+}
+
+.nav-bar,
+.nav-content,
+.nav-list-one,
+.nav-list-two {
+  display: flex;
+  column-gap: 3.5rem;
+}
+
+.feat--todo {
+  list-style-image: url(../images/icon-todo.svg);
+}
+
+.feat--cal {
+  list-style-image: url(../images/icon-calendar.svg);
+}
+
+.feat--rem {
+  list-style-image: url(../images/icon-reminders.svg);
+}
+
+.feat--plan {
+  list-style-image: url(../images/icon-planning.svg);
+}
+
+.nav-expandable--feat li {
+  padding-left: 0.5rem;
+}
+
+.nav-expandable {
+  display: none;
+}
+
+.nav-expandable > *:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+
+.nav--expanded .nav-expandable__header {
+  color: var(--color-black);
+}
+
+.nav--expanded .nav-expandable__icon {
+  transform: rotate(180deg);
+}
+
+.nav--expanded .nav-expandable {
+  display: block;
+}
+
+@media screen and (max-width: 899px) {
+  .nav-content--hidden.nav-content {
+    display: none;
+  }
+
+  .background-panel--visible {
+    display: block;
+  }
+
+  .nav-bar {
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-content {
+    position: fixed;
+    background-color: var(--color-white);
+    padding: 1.5rem;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 40vw;
+  }
+
+  .nav-content,
+  ul[class*="nav-list"] {
+    flex-direction: column;
+    row-gap: 2.5rem;
+  }
+
+  ul[class*="nav-list"] > * {
+    width: 100%;
+  }
+
+  .nav__button-close {
+    margin-left: auto;
+  }
+
+  .nav-list-two {
+    text-align: center;
+  }
+
+  .nav-expandable {
+    margin-top: 2rem;
+  }
+
+  .nav-expandable--company {
+    padding-left: 20px;
+  }
+
+  .btn__register {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  button[class*="nav__button"] {
+    display: none;
+  }
+
+  .nav-content {
+    flex-grow: 1;
+  }
+
+  .nav-list-two {
+    margin-left: auto;
+  }
+
+  .nav-expandable-group {
+    position: relative;
+  }
+  .nav-expandable {
+    position: absolute;
+    top: 4rem;
+    padding: 2rem;
+    border-radius: var(--br-300);
+    box-shadow: 0 0 30px 5px hsla(0, 0%, 41%, 0.308);
+  }
+
+  .nav-expandable--feat {
+    right: 0;
+    padding-left: 4rem;
+  }
+  .nav-expandable--company {
+    left: 0;
+    right: -3rem;
+  }
 }
 
 /* Hero Section */

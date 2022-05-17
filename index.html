@@ -14,9 +14,70 @@
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/style.css" />
 
+    <script defer src="js/script.js"></script>
+
     <title>Frontend Mentor | Intro section with dropdown navigation</title>
   </head>
   <body>
+    <header>
+      <div class="container nav-bar">
+        <a href="#"><img src="images/logo.svg" alt="Return to homepage" /></a>
+        <button class="button--modified nav__button-open">
+          <img src="images/icon-menu.svg" alt="Click to open navigation bar" />
+        </button>
+
+        <div class="background-panel"></div>
+        <div class="nav-content--hidden nav-content">
+          <button class="button--modified nav__button-close">
+            <img
+              src="images/icon-close-menu.svg"
+              alt="Click to close navigation bar"
+            />
+          </button>
+          <ul class="nav-list-one list--modified">
+            <li class="nav-expandable-group">
+              <button class="button--modified nav-expandable__header">
+                Features
+                <img
+                  class="nav-expandable__icon"
+                  src="images/icon-arrow-down.svg"
+                  alt=""
+                />
+              </button>
+              <ul class="nav-expandable nav-expandable--feat">
+                <li class="feat--todo"><a href="#">Todo List</a></li>
+                <li class="feat--cal"><a href="#">Calendar</a></li>
+                <li class="feat--rem"><a href="#">Reminders</a></li>
+                <li class="feat--plan"><a href="#">Planning</a></li>
+              </ul>
+            </li>
+            <li class="nav-expandable-group">
+              <button class="button--modified nav-expandable__header">
+                Company
+                <img
+                  class="nav-expandable__icon"
+                  src="images/icon-arrow-down.svg"
+                  alt=""
+                />
+              </button>
+              <ul class="list--modified nav-expandable nav-expandable--company">
+                <li><a href="#">History</a></li>
+                <li><a href="#">Our Team</a></li>
+                <li><a href="#">Blog</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">About</a></li>
+          </ul>
+          <ul class="nav-list-two list--modified">
+            <li><a href="#">Login</a></li>
+            <li>
+              <a href="#" class="btn btn--light btn__register">Register</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
     <main>
       <div class="hero-section container">
         <img
@@ -31,7 +92,7 @@
               Get your team in sync, no matter your location. Streamline
               processes, create team rituals, and watch productivity soar.
             </p>
-            <a href="#" class="modified-link btn btn--dark">Learn more</a>
+            <a href="#" class="link--modified btn btn--dark">Learn more</a>
           </div>
           <div class="client-group">
             <img src="images/client-databiz.svg" alt="Databiz" />
